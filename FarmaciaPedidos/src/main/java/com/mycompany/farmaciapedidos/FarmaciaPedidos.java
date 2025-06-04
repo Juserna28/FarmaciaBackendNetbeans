@@ -4,6 +4,9 @@
 
 package com.mycompany.farmaciapedidos;
 
+import com.mycompany.farmaciapedidos.ui.FormularioPedido;
+import javax.swing.SwingUtilities;
+
 /**
  *
  * @author Usuario
@@ -11,6 +14,6 @@ package com.mycompany.farmaciapedidos;
 public class FarmaciaPedidos {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        SwingUtilities.invokeLater(() -> new FormularioPedido());
     }
 }
