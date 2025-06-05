@@ -119,7 +119,17 @@ public class FormularioPedido extends JFrame {
                     return;
                 }
             } catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(this, "La cantidad debe ser un numero válido");
+                JOptionPane.showMessageDialog(this, "La cantidad debe ser un numero valido");
+                return;
+            }
+
+            if (distribuidor == null) {
+                JOptionPane.showMessageDialog(this, "Seleccione un distribuidor");
+                return;
+            }
+
+            if (!enviarPrincipal && !enviarSecundaria) {
+                JOptionPane.showMessageDialog(this, "Seleccione al menos una sucursal");
                 return;
             }
 
