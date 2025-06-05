@@ -133,6 +133,9 @@ public class FormularioPedido extends JFrame {
                 return;
             }
 
+            // Abrir la ventana de resumen si todo está bien
+            new VentanaResumen(nombreMedicamento, tipoMedicamento, cantidad,
+                    distribuidor, enviarPrincipal, enviarSecundaria);
         });
 
         setVisible(true);
