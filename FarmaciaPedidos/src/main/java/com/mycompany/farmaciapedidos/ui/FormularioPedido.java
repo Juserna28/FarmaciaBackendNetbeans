@@ -88,6 +88,43 @@ public class FormularioPedido extends JFrame {
             chkSecundaria.setSelected(false);
         });
 
+        btnConfirmar.addActionListener(e -> {
+            String nombreMedicamento = txtNombre.getText().trim();
+            String tipoMedicamento = (String) comboTipo.getSelectedItem();
+            String cantidadTexto = txtCantidad.getText().trim();
+
+            String distribuidor = null;
+            if (rbtnCofarma.isSelected()) {
+                distribuidor = "Cofarma";
+            } else if (rbtnEmpsephar.isSelected()) {
+                distribuidor = "Empsephar";
+            } else if (rbtnCemefar.isSelected()) {
+                distribuidor = "Cemefar";
+            }
+
+            boolean enviarPrincipal = chkPrincipal.isSelected();
+            boolean enviarSecundaria = chkSecundaria.isSelected();
+
+            // Validaciones
+            if (nombreMedicamento.isEmpty() || !nombreMedicamento.matches("[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ\\s]+")) {
+                JOptionPane.showMessageDialog(this, "Ingrese un nombre de medicamento valido");
+                return;
+            }
+
+            int cantidad;
+            try {
+                cantidad = Integer.parseInt(cantidadTexto);
+                if (cantidad <= 0) {
+                    JOptionPane.showMessageDialog(this, "La cantidad debe ser un numero positivo");
+                    return;
+                }
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(this, "La cantidad debe ser un numero válido");
+                return;
+            }
+
+        });
+
         setVisible(true);
     }
 

@@ -4,10 +4,13 @@
  */
 package com.mycompany.farmaciapedidos.ui;
 
+import javax.swing.*;
+import java.awt.*;
 /**
  *
  * @author Usuario
  */
-public class VentanaResumen {
+public class VentanaResumen extends JFrame{
+    
     
 }
