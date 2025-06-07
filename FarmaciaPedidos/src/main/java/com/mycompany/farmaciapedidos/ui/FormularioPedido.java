@@ -111,7 +111,7 @@ public class FormularioPedido extends JFrame {
                 return;
             }
 
-            int cantidad;
+            int cantidad; //Contadro
             try {
                 cantidad = Integer.parseInt(cantidadTexto);
                 if (cantidad <= 0) {
@@ -133,7 +133,7 @@ public class FormularioPedido extends JFrame {
                 return;
             }
 
-            // Abrir la ventana de resumen si todo está bien
+            // Abrir la ventana de resumen
             new VentanaResumen(nombreMedicamento, tipoMedicamento, cantidad,
                     distribuidor, enviarPrincipal, enviarSecundaria);
         });
