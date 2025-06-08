@@ -16,7 +16,7 @@ public class VentanaResumen extends JFrame {
     public VentanaResumen(String nombreMedicamento, String tipoMedicamento, int cantidad,
             String distribuidor, boolean enviarPrincipal, boolean enviarSecundaria) {
         setTitle("Pedido al distribuidor " + distribuidor);
-        setSize(500, 200);
+        setSize(500, 300);
         setLocationRelativeTo(null);
         setLayout(new GridLayout(3, 1));
 
